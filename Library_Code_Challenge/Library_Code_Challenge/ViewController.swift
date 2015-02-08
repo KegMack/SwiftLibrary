@@ -10,27 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  var shouldCreateDemo = false
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    shouldCreateDemo = false
     // Do any additional setup after loading the view, typically from a nib.
   }
-
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
 
-  @IBAction func testButtonPressed() {
-    let book = Book(title: "Gato", author: "Yo Mama", numPages: 1111)
-    let book2 = Book()
-    book.printInfo()
-    book2.printInfo()
-    var shelf = Shelf()
-    shelf.addBook(book)
-    shelf.addBook(book2)
-    shelf.printShelf()
-    book2.deshelf(shelf)
-    shelf.printShelf()
+  @IBAction func createDemoPressed(sender: UIButton) {
+    shouldCreateDemo = true
+  }
+
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "homeToLibrariesSegue" && shouldCreateDemo {
+      if let nextVC = segue.destinationViewController as? LibraryViewController {
+        nextVC.createDemo()
+      }
+    }
   }
 
 }

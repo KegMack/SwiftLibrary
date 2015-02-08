@@ -12,12 +12,10 @@ class ShelvesViewController: ViewController, UITableViewDelegate
 {
   var dataSource: Library? = nil
   
-  @IBOutlet weak var navItem: UINavigationItem!
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     if let aSource = dataSource {
-      self.navItem.title = aSource.name
+      self.navigationItem.title = aSource.name
     }
   }
   
@@ -38,6 +36,7 @@ class ShelvesViewController: ViewController, UITableViewDelegate
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var bookCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "bookCell")
+    bookCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
     bookCell.textLabel!.text = self.dataSource!.shelves[indexPath.section].books[indexPath.row].title
     bookCell.detailTextLabel!.text = "by \(self.dataSource!.shelves[indexPath.section].books[indexPath.row].author)"
     return bookCell

@@ -17,13 +17,13 @@ class LibraryViewController: UIViewController, UITableViewDelegate
     super.viewDidLoad()
   }
   
-  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.libraries.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var libraryCell = UITableViewCell()
+    libraryCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
     libraryCell.textLabel?.text = self.libraries[indexPath.row].name
     return libraryCell
   }
@@ -36,7 +36,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "shelvesSegue" {
       if let nextVC = segue.destinationViewController as? ShelvesViewController {
-          nextVC.dataSource = self.chosenLibrary
+        nextVC.dataSource = self.chosenLibrary
       }
     }
   }
