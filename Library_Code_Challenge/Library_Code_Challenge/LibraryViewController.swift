@@ -8,39 +8,74 @@
 
 import UIKit
 
-class LibraryViewController: UIViewController, UITableViewDelegate
+class LibraryViewController: UIViewController, ShelfVCProtocol, UITableViewDelegate
 {
   var libraries = [Library]()
-  var chosenLibrary: Library? = nil
+  var chosenLibraryIndex = -1
+  
+  @IBOutlet weak var libraryTableView: UITableView!
 
+  func libraryWasChanged(library: Library) {
+    self.libraries[self.chosenLibraryIndex] = library
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-  
-  
+
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.libraries.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var libraryCell = UITableViewCell()
+    libraryCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
     libraryCell.textLabel?.text = self.libraries[indexPath.row].name
     return libraryCell
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    self.chosenLibrary = self.libraries[indexPath.row]
+    self.chosenLibraryIndex = indexPath.row
     self.performSegueWithIdentifier("shelvesSegue", sender: self)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "shelvesSegue" {
       if let nextVC = segue.destinationViewController as? ShelvesViewController {
-          nextVC.dataSource = self.chosenLibrary
+        nextVC.dataSource = self.libraries
+        nextVC.chosenLibraryIndex = self.chosenLibraryIndex
+        nextVC.delegate = self
       }
     }
   }
   
+  @IBAction func addLibraryPressed(sender: UIBarButtonItem) {
+    
+    //this function was adapted from http://swiftoverload.com/uialertcontroller-swift-example/  Thanks!
+    
+    var userInputField = UITextField()
+    let addLibraryController: UIAlertController = UIAlertController(title: "Add New Library", message: "", preferredStyle: .Alert)
+    addLibraryController.addTextFieldWithConfigurationHandler { textField -> Void in
+      textField.textColor = UIColor.blueColor()
+      textField.placeholder = "Name"
+      userInputField = textField
+    }
+    let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+    }
+    addLibraryController.addAction(cancelAction)
+    let enterAction: UIAlertAction = UIAlertAction(title: "Enter", style: .Default) { action -> Void in
+      if((userInputField.text) != nil) {
+        var newLibrary = Library(name: userInputField.text)
+        self.libraries.append(newLibrary)
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          self.libraryTableView.reloadData()
+        })
+      }
+    }
+    addLibraryController.addAction(enterAction)
+    self.presentViewController(addLibraryController, animated: true, completion: nil)
+  }
+
   func createDemo() {
     self.libraries.removeAll()
     var shelf10 = Shelf()

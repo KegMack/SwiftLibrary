@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5C8B251A8845FE00E601F0 /* books_texture3028.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE5C8B241A8845FE00E601F0 /* books_texture3028.jpg */; };
+		CE5C8B271A88472E00E601F0 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C8B261A88472E00E601F0 /* BookDetailViewController.swift */; };
 		CEC9003D1A85650500A038CB /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9003C1A85650500A038CB /* Library.swift */; };
 		CEC9003F1A86E47200A038CB /* Melk_-_Abbey_-_Library.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEC9003E1A86E47200A038CB /* Melk_-_Abbey_-_Library.jpg */; };
 		CEC900451A86FA5000A038CB /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC900441A86FA5000A038CB /* LibraryViewController.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE5C8B241A8845FE00E601F0 /* books_texture3028.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = books_texture3028.jpg; sourceTree = "<group>"; };
+		CE5C8B261A88472E00E601F0 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		CEC9003C1A85650500A038CB /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		CEC9003E1A86E47200A038CB /* Melk_-_Abbey_-_Library.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Melk_-_Abbey_-_Library.jpg"; sourceTree = "<group>"; };
 		CEC900441A86FA5000A038CB /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				CEC9004A1A871D3500A038CB /* CreateDemoConfirmationVC.swift */,
 				CEC900441A86FA5000A038CB /* LibraryViewController.swift */,
 				CEC9004C1A87323200A038CB /* ShelvesViewController.swift */,
+				CE5C8B261A88472E00E601F0 /* BookDetailViewController.swift */,
 				CED154A81A842AFA00E32ABB /* Main.storyboard */,
 				CED154AB1A842AFA00E32ABB /* Images.xcassets */,
 				CED154AD1A842AFA00E32ABB /* LaunchScreen.xib */,
@@ -106,6 +111,7 @@
 		CED154A21A842AFA00E32ABB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE5C8B241A8845FE00E601F0 /* books_texture3028.jpg */,
 				CEC900461A87014700A038CB /* industrial-background-3dfb78.jpg */,
 				CEC9003E1A86E47200A038CB /* Melk_-_Abbey_-_Library.jpg */,
 				CED154A31A842AFA00E32ABB /* Info.plist */,
@@ -211,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC9003F1A86E47200A038CB /* Melk_-_Abbey_-_Library.jpg in Resources */,
+				CE5C8B251A8845FE00E601F0 /* books_texture3028.jpg in Resources */,
 				CED154AA1A842AFA00E32ABB /* Main.storyboard in Resources */,
 				CEC900471A87014700A038CB /* industrial-background-3dfb78.jpg in Resources */,
 				CED154AF1A842AFA00E32ABB /* LaunchScreen.xib in Resources */,
@@ -236,6 +243,7 @@
 				CEC9004D1A87323200A038CB /* ShelvesViewController.swift in Sources */,
 				CEC9003D1A85650500A038CB /* Library.swift in Sources */,
 				CEC900451A86FA5000A038CB /* LibraryViewController.swift in Sources */,
+				CE5C8B271A88472E00E601F0 /* BookDetailViewController.swift in Sources */,
 				CEC9004B1A871D3500A038CB /* CreateDemoConfirmationVC.swift in Sources */,
 				CED154A51A842AFA00E32ABB /* AppDelegate.swift in Sources */,
 			);
