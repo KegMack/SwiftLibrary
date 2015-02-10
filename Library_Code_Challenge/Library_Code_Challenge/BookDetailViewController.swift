@@ -24,7 +24,9 @@ class BookDetailViewController: ViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var authorLabel: UILabel!
   @IBOutlet weak var pagesLabel: UILabel!
-  
+  @IBOutlet weak var titleChangeButton: UIButton!
+  @IBOutlet weak var pagesChangeButton: UIButton!
+  @IBOutlet weak var authorChangeButton: UIButton!
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var authorTextField: UITextField!
   @IBOutlet weak var pagesTextField: UITextField!
@@ -51,7 +53,7 @@ class BookDetailViewController: ViewController {
   }
   
   @IBAction func createBookPressed() {
-    let createBookController: UIAlertController = UIAlertController(title: "Book Creation", message: "This will create a new book with the information currently entered in all the text-boxes on this page.  The book will be placed in the 'checkout' bin of your local library", preferredStyle: .Alert)
+    let createBookController: UIAlertController = UIAlertController(title: "Book Creation", message: "This will create a new book with the information currently entered in all the text-boxes on this page.  The book will be placed in the 'unshelved' bin of your local library", preferredStyle: .Alert)
     let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in }
     createBookController.addAction(cancelAction)
     let confirmAction: UIAlertAction = UIAlertAction(title: "Confirm", style: .Default) { action -> Void in
@@ -72,6 +74,46 @@ class BookDetailViewController: ViewController {
     self.presentViewController(createBookController, animated: true, completion: nil)
   }
   
+  @IBAction func reShelfBookPressed(sender: UIBarButtonItem) {
+    let reShelfBookController: UIAlertController = UIAlertController(title: "Select Destination Shelf \n Please note shelving or deleting a book will disable editing.  Please locate book on new shelf to edit.", message: nil, preferredStyle: .ActionSheet)
+    if let aSource = self.dataSource? {
+      for (index, shelf) in enumerate(self.dataSource!.shelves) {
+        let reshelfAction = UIAlertAction(title: "Shelf \(index+1)", style: .Default, handler: {(alert:UIAlertAction!) -> Void in
+          self.removeBookFromShelf()
+          self.dataSource!.shelves[index].addBook(self.book)
+          self.synchronizeLibrary()
+          sender.enabled = false
+          self.disableBookChangingButtons()
+        })
+        reShelfBookController.addAction(reshelfAction)
+      }
+      
+      let unShelfAction = UIAlertAction(title: "Unshelf", style: .Default, handler: {(alert:UIAlertAction!) -> Void in
+        self.removeBookFromShelf()
+        self.dataSource!.unshelvedBooks.append(self.book)
+        self.synchronizeLibrary()
+        sender.enabled = false
+        self.disableBookChangingButtons()
+      })
+      reShelfBookController.addAction(unShelfAction)
+      
+      let deleteAction = UIAlertAction(title: "Trash Bin (Cannot Undo)", style: .Default, handler: {
+        (alert: UIAlertAction!) -> Void in
+        self.removeBookFromShelf()
+        self.synchronizeLibrary()
+        sender.enabled = false
+        self.disableBookChangingButtons()
+      })
+      reShelfBookController.addAction(deleteAction)
+    }
+
+    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+      (alert: UIAlertAction!) -> Void in
+    })
+    reShelfBookController.addAction(cancelAction)
+    
+    self.presentViewController(reShelfBookController, animated: true, completion: nil)
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -88,17 +130,30 @@ class BookDetailViewController: ViewController {
     }
   }
 
-  
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    self.view.endEditing(true)
-    
     // thank you to https://ios8programminginswift.wordpress.com/2014/08/27/dismiss-keyboard/ for this function : )
+    self.view.endEditing(true)
   }
   
   
+  //// PRIVATE HELPER METHODS --- need to learn how to make them private lol x(
+  func disableBookChangingButtons() {
+    self.titleChangeButton.enabled = false
+    self.authorChangeButton.enabled = false
+    self.pagesChangeButton.enabled = false
+  }
   
+  func removeBookFromShelf(){
+    if let aSource = self.dataSource? {
+      if self.bookIsShelved {
+        self.dataSource!.shelves[self.shelfIndex].removeBook(self.book)
+      }
+      else {
+        self.dataSource!.unshelvedBooks.removeAtIndex(self.bookIndex)
+      }
+    }
+  }
   
-  //// PRIVATE HELPER METHODS --- need to learn how to make private x(
   func addBookAndUpdateLibrary() {
     if let aSource = self.dataSource? {
       if self.bookIsShelved {

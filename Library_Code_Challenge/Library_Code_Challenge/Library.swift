@@ -113,6 +113,10 @@ class Library
       self.name = name!
     }
   }
-  
+  func printUnshelved() {
+    for book in self.unshelvedBooks {
+      println("\(book.title)")
+    }
+  }
 }
 

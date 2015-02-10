@@ -46,7 +46,6 @@ class ShelvesViewController: ViewController, UITableViewDelegate, BookDetailVCPr
     
     //this function was adapted from http://swiftoverload.com/uialertcontroller-swift-example/  Thanks!
     
-    //var userInputField = UITextField()
     let addShelfController: UIAlertController = UIAlertController(title: "Add New Shelf", message: "Confirm New Shelf?", preferredStyle: .Alert)
     let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
     }
@@ -69,7 +68,6 @@ class ShelvesViewController: ViewController, UITableViewDelegate, BookDetailVCPr
   }
   
   func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-   // println("num sections: \(dataSource!.shelves.count)")
     if let aSource = self.dataSource? {
       return dataSource![self.chosenLibraryIndex].shelves.count + 1
     }
@@ -77,18 +75,15 @@ class ShelvesViewController: ViewController, UITableViewDelegate, BookDetailVCPr
   }
   
   func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String {
-   // println("title for section: \(section)")
     if section < self.numShelves  {
       return "Shelf #\(section+1)"
     }
     else  {
-      return "Checked Out"
+      return "Unshelved"
     }
-    
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //println("num rows: \(dataSource!.shelves[section].books.count)")
     if let aSource = self.dataSource? {
       if section < self.numShelves {
         return dataSource![self.chosenLibraryIndex].shelves[section].books.count
@@ -135,6 +130,4 @@ class ShelvesViewController: ViewController, UITableViewDelegate, BookDetailVCPr
     }
   }
   
-  
-
-}
+}   // end of VC Class

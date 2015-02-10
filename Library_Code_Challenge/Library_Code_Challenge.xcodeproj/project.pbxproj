@@ -13,7 +13,6 @@
 		CEC9003F1A86E47200A038CB /* Melk_-_Abbey_-_Library.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEC9003E1A86E47200A038CB /* Melk_-_Abbey_-_Library.jpg */; };
 		CEC900451A86FA5000A038CB /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC900441A86FA5000A038CB /* LibraryViewController.swift */; };
 		CEC900471A87014700A038CB /* industrial-background-3dfb78.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEC900461A87014700A038CB /* industrial-background-3dfb78.jpg */; };
-		CEC9004B1A871D3500A038CB /* CreateDemoConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9004A1A871D3500A038CB /* CreateDemoConfirmationVC.swift */; };
 		CEC9004D1A87323200A038CB /* ShelvesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9004C1A87323200A038CB /* ShelvesViewController.swift */; };
 		CED154A51A842AFA00E32ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED154A41A842AFA00E32ABB /* AppDelegate.swift */; };
 		CED154A71A842AFA00E32ABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED154A61A842AFA00E32ABB /* ViewController.swift */; };
@@ -40,7 +39,6 @@
 		CEC9003E1A86E47200A038CB /* Melk_-_Abbey_-_Library.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Melk_-_Abbey_-_Library.jpg"; sourceTree = "<group>"; };
 		CEC900441A86FA5000A038CB /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		CEC900461A87014700A038CB /* industrial-background-3dfb78.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "industrial-background-3dfb78.jpg"; sourceTree = "<group>"; };
-		CEC9004A1A871D3500A038CB /* CreateDemoConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDemoConfirmationVC.swift; sourceTree = "<group>"; };
 		CEC9004C1A87323200A038CB /* ShelvesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShelvesViewController.swift; sourceTree = "<group>"; };
 		CED1549F1A842AFA00E32ABB /* Library_Code_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library_Code_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED154A31A842AFA00E32ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				CED154A41A842AFA00E32ABB /* AppDelegate.swift */,
 				CEC9003C1A85650500A038CB /* Library.swift */,
 				CED154A61A842AFA00E32ABB /* ViewController.swift */,
-				CEC9004A1A871D3500A038CB /* CreateDemoConfirmationVC.swift */,
 				CEC900441A86FA5000A038CB /* LibraryViewController.swift */,
 				CEC9004C1A87323200A038CB /* ShelvesViewController.swift */,
 				CE5C8B261A88472E00E601F0 /* BookDetailViewController.swift */,
@@ -244,7 +241,6 @@
 				CEC9003D1A85650500A038CB /* Library.swift in Sources */,
 				CEC900451A86FA5000A038CB /* LibraryViewController.swift in Sources */,
 				CE5C8B271A88472E00E601F0 /* BookDetailViewController.swift in Sources */,
-				CEC9004B1A871D3500A038CB /* CreateDemoConfirmationVC.swift in Sources */,
 				CED154A51A842AFA00E32ABB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
