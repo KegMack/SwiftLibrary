@@ -20,14 +20,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Melk_-_Abbey_-_Library.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gfr-fx-Lea">
                                 <rect key="frame" x="0.0" y="64" width="600" height="528"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Welcome to Library Central Command Center HQ Alpha" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlH-Um-4dZ">
-                                <rect key="frame" x="16" y="72" width="568" height="90"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="756" text="Welcome to Library Central Command Center HQ Alpha" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlH-Um-4dZ">
+                                <rect key="frame" x="16" y="72" width="568" height="74"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" red="0.11703031982015" green="0.20101589303460143" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-WG-1G0">
-                                <rect key="frame" x="276" y="385" width="51" height="31"/>
+                                <rect key="frame" x="276" y="369" width="51" height="31"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <color key="onTintColor" red="0.1170303198" green="0.201015893" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" red="0.75068153979999996" green="0.54066756419999995" blue="0.15212817109999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,8 +35,8 @@
                                     <action selector="createDemoSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="kRI-pu-K9k"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Create Demo: ON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPz-S2-U1U">
-                                <rect key="frame" x="190" y="303" width="220" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Create Demo: ON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPz-S2-U1U">
+                                <rect key="frame" x="195" y="303" width="210" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" red="0.1170303198" green="0.201015893" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                         <constraints>
                             <constraint firstItem="NlH-Um-4dZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9fd-j0-cE3"/>
                             <constraint firstAttribute="centerX" secondItem="XQv-WG-1G0" secondAttribute="centerX" id="Csh-tl-Zkx"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XQv-WG-1G0" secondAttribute="bottom" priority="750" constant="184" id="FWV-kb-wFs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XQv-WG-1G0" secondAttribute="bottom" priority="233" constant="184" id="FWV-kb-wFs"/>
                             <constraint firstItem="HPz-S2-U1U" firstAttribute="top" secondItem="NlH-Um-4dZ" secondAttribute="bottom" priority="733" constant="157" id="Ffv-rC-a4c"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gfr-fx-Lea" secondAttribute="bottom" constant="8" id="Gng-MS-zlw"/>
                             <constraint firstItem="NlH-Um-4dZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="I8s-74-CeY"/>
@@ -56,6 +56,7 @@
                             <constraint firstItem="Gfr-fx-Lea" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Z3r-kn-VPE"/>
                             <constraint firstItem="NlH-Um-4dZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="av5-HE-HES"/>
                             <constraint firstItem="XQv-WG-1G0" firstAttribute="top" secondItem="HPz-S2-U1U" secondAttribute="bottom" constant="33" id="iOi-Ux-TE3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XQv-WG-1G0" secondAttribute="bottom" constant="15" id="n8B-yA-8ha"/>
                             <constraint firstItem="HPz-S2-U1U" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NlH-Um-4dZ" secondAttribute="bottom" constant="10" id="nsa-9i-RBE"/>
                         </constraints>
                     </view>
